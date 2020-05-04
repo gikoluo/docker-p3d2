@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "caesarcluster"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "caesarcluster"
+    spec:
+      containers:
+        - name: "caesarcluster"
+          image: "caesarregistry.azurecr.io/caesarcluster"
+          ports:
+          - containerPort: 8000
