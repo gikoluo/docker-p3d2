@@ -10,7 +10,7 @@ RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list \
      && sed -i 's|security.debian.org|mirrors.aliyun.com|g' /etc/apt/sources.list \
      && apt-get update \
      && apt-get install -y --no-install-recommends \
-         postgresql-client \
+         postgresql-client gettext libgettextpo-dev \
      && rm -rf /var/lib/apt/lists/* \
      && pip3 config set global.index-url http://mirrors.aliyun.com/pypi/simple \
      && pip3 config set global.trusted-host mirrors.aliyun.com \
