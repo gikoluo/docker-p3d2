@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "caesarcluster"
+    labels:
+        app: "caesarcluster"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: caesarclustere5e2-caesarcluster.bcbd93d6b84f47629ec3.koreacentral.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "caesarcluster"
+                servicePort: 8000
