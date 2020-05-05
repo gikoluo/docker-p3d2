@@ -6,6 +6,10 @@
 
 FROM python:3.8
 
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+
 RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list \
      && sed -i 's|security.debian.org|mirrors.aliyun.com|g' /etc/apt/sources.list \
      && apt-get update \
